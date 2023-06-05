@@ -1,0 +1,97 @@
+// Place your key bindings in this file to override the defaults
+[
+    // Recommended extensions
+// - https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command
+
+// For Markdown in general
+
+      // Create a level 1 header
+      {
+        "key": "ctrl+h 1",
+        "command": "extension.multiCommand.execute",
+        "args": { 
+            "sequence": [
+                "cursorLineStart",
+                {"command": "type",
+                "args": {"text": "# "},
+                },
+                "cursorLineEnd"
+            ]
+        }
+    },
+
+      // Create a level 2 header
+      {
+        "key": "ctrl+h 2",
+        "command": "extension.multiCommand.execute",
+        "args": { 
+            "sequence": [
+                "cursorLineStart",
+                {"command": "type",
+                "args": {"text": "## "},
+                },
+                "cursorLineEnd"
+            ]
+        }
+    },
+
+    // Create a level 3 header
+    {
+      "key": "ctrl+h 3",
+      "command": "extension.multiCommand.execute",
+      "args": { 
+          "sequence": [
+              "cursorLineStart",
+              {"command": "type",
+              "args": {"text": "### "},
+              },
+              "cursorLineEnd"
+          ]
+      }
+  },
+
+   // Create a level 4 header
+   {
+    "key": "ctrl+h 4",
+    "command": "extension.multiCommand.execute",
+    "args": { 
+        "sequence": [
+            "cursorLineStart",
+            {"command": "type",
+            "args": {"text": "#### "},
+            },
+            "cursorLineEnd"
+        ]
+    }
+},
+// Markdown - requires snippet
+      {
+        "key": "ctrl+shift+/",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "markdown",
+          "name": "Question - Markdown Footnote"
+        }
+      },
+
+      // Convert to PDF with template
+      {
+        "key": "ctrl+alt+p",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {"text": "cd ${fileDirname} && \"pandoc\" \"${file}\" -o \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.pdf\" --template=\"C:\\Users\\irw\\OneDrive - University of Delaware - o365\\_tools\\templates\\latex.tex\" -V toc -V geometry:\"top=1in, bottom=1in, left=1in, right=1in\" && \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.pdf\" \u000D"}
+      },
+
+      // Run selected with Ctrl+Enter
+      // https://stackoverflow.com/questions/45667252/vs-code-execute-current-line-or-selection-to-in-the-integrated-console
+      {
+        "key": "ctrl+enter",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "editorTextFocus && editorHasSelection"
+      },
+      {
+        "key": "shift+enter",
+        "command": "jupyter.execSelectionInteractive",
+        "when": "editorTextFocus && isWorkspaceTrusted && jupyter.ownsSelection && !findInputFocussed && !jupyter.webExtension && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+      }
+]
