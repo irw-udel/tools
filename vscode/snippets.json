@@ -12,7 +12,7 @@
 		"toc: true",
 		"numbersections: false",
 		"abstract: |",
-			"  The following includes notes from slides, including key points taken from the slides/presenter. Feedback and questions are also included as hyperlinked footnotes, which return to the relevant section of the document. (Typos may run rampant.)",
+			"  The following includes notes from slides, including key points taken from the slides/presenter. Feedback and questions are also included as hyperlinked footnotes. (Typos may run rampant.)",
 			"\n  ",
 		"tags:",
 			"  - ",
