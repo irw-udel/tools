@@ -3,5 +3,24 @@
     "files.associations": {
         "*.txt": "markdown"
     },
-    "pasteImage.path": "${projectRoot}/img"
+    "pasteImage.path": "${projectRoot}/img",
+    // Note: since 1.79, can paste images without extension
+    // https://code.visualstudio.com/updates/v1_79#_copy-external-media-files-into-workspace-on-drop-or-paste-for-markdown
+    "markdown.copyFiles.destination": {
+        "/*": "images/${documentBaseName}/"
+      },
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}"
+    },
+    "python.analysis.extraPaths": [
+        "%APPDATA%\\McNeel\\python-stubs", // may need to expand to full path
+        "%APPDATA%\\McNeel\\Rhinoceros\\6.0\\Plug-ins\\IronPython (814d908a-e25c-493d-97e9-ee3861957f49)\\settings\\lib"
+    ],
+ "editor.rulers": [
+        80,
+        120
+    ],
+    "arduino.useArduinoCli": true
+    
 }
