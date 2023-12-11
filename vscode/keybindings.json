@@ -79,7 +79,7 @@
       {
         "key": "ctrl+alt+p",
         "command": "workbench.action.terminal.sendSequence",
-        "args": {"text": "cd ${fileDirname} && \"pandoc\" \"${file}\" -o \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.pdf\" --template=\"C:\\Users\\irw\\OneDrive - University of Delaware - o365\\_tools\\templates\\latex.tex\" -V toc -V geometry:\"top=1in, bottom=1in, left=1in, right=1in\" && \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.pdf\" \u000D"}
+        "args": {"text": "cd ${fileDirname} && \"pandoc\" \"${file}\" -o \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.pdf\" --template=\"%USERPROFILE%\\tools\\templates\\latex.tex\" -V toc -V geometry:\"top=1in, bottom=1in, left=1in, right=1in\" && \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.pdf\" \u000D"}
       },
 
       // Run selected with Ctrl+Enter

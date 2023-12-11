@@ -1,0 +1,46 @@
+## Basics
+https://gist.github.com/jsoma/629b9564af5b1e7fa62d0a3a0a47c296
+
+```
+pandoc -t revealjs -s -o index.html _index.txt -V revealjs-url=https://unpkg.com/reveal.js/ -V theme=serif
+```
+
+### With custom style
+
+```
+pandoc -t revealjs -s -o index.html _index.txt -V revealjs-url=https://unpkg.com/reveal.js/ --include-in-header="%USERPROFILE%\tools\templates\revealjs\slides.css" -V theme=serif
+```
+
+## Scrolling
+https://stackoverflow.com/a/52669218
+
+```
+pandoc -t revealjs -s -o index.html _index.txt -V revealjs-url=https://unpkg.com/reveal.js/ --include-in-header="scroll.css" --include-after-body="scroll.js"  
+```
+
+From anywhere:
+
+```
+pandoc -t revealjs -s -o index.html _index.txt -V revealjs-url=https://unpkg.com/reveal.js/ --include-in-header="%USERPROFILE%\tools\templates\revealjs\scroll.css" --include-after-body="%USERPROFILE%\tools\templates\revealjs\scroll.js"
+```
+
+With custom style
+```
+pandoc -t revealjs -s -o index.html _index.txt -V revealjs-url=https://unpkg.com/reveal.js/ --include-in-header="%USERPROFILE%\tools\templates\revealjs\slides.css" --include-in-header="%USERPROFILE%\tools\templates\revealjs\scroll.css" --include-after-body="%USERPROFILE%\tools\templates\revealjs\scroll.js"
+```
+
+## Storing images and resources
+https://github.com/jgm/pandoc/issues/3915
+
+```
+pandoc --embed-resources --standalone -t revealjs -s -o index.html _index.txt -V revealjs-url=https://unpkg.com/reveal.js/ --include-in-header="%USERPROFILE%\tools\templates\revealjs\slides.css" --include-in-header="%USERPROFILE%\tools\templates\revealjs\scroll.css" --include-after-body="%USERPROFILE%\tools\templates\revealjs\scroll.js"
+```
+
+## Vertical slides
+https://github.com/jgm/pandoc/issues/4317
+
+I tend to start with level 2 headers, in case multiple documents should be combined. To make this work with the 2D slide setup of revealjs, add the option `--slide-level=3` to the command. This will make level 3 content appear in the vertical slides.
+
+```
+pandoc --embed-resources --standalone -t revealjs -s -o index.html _index.txt -V revealjs-url=https://unpkg.com/reveal.js/ --include-in-header="%USERPROFILE%\tools\templates\revealjs\slides.css" --include-in-header="%USERPROFILE%\tools\templates\revealjs\scroll.css" --include-after-body="%USERPROFILE%\tools\templates\revealjs\scroll.js" --slide-level=3
+```
